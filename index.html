@@ -464,26 +464,7 @@
                         <div class="mb-2"><label>Mengingat</label><textarea name="skMengingat" class="form-control" rows="3">1. UU nomor... 2. Permendagri nomor...dst</textarea></div>
                         <div class="mb-2"><label>Menetapkan</label><textarea name="skMenetapkan" class="form-control" rows="5">Kesatu:..... Kedua:............ Ketiga:...........</textarea></div>
                      </div>
-                     <div id="box-sppd" class="form-box hide">
-                        <div class="mb-2"><label>Maksud Perjalanan Dinas</label><input name="perihal" class="form-control" placeholder="Mengikuti kegiatan bimtek administrasi..."></div>
-                        <div class="card p-3 bg-light mb-2"><b class="text-primary">Pegawai:</b><div class="row g-2 mt-1">
-                          <div class="col-6"><input name="tujuanNama" class="form-control" placeholder="Nama"></div>
-                          <div class="col-6"><input name="tujuanNip" class="form-control" placeholder="NIP"></div>
-                          <div class="col-6"><input name="tujuanPangkat" class="form-control" placeholder="Pangkat"></div>
-                          <div class="col-6"><input name="tujuanJabatan" class="form-control" placeholder="Jabatan"></div></div></div>
-                        <div class="card p-3 bg-light mb-2"><b class="text-success">Perjalanan:</b><div class="row g-2 mt-1">
-                          <div class="col-6"><label>Alat Angkutan</label><input name="sppdAngkutan" class="form-control"></div>
-                          <div class="col-6"><label>Tempat/Kota Tujuan</label><input name="sppdTujuan" class="form-control"></div>
-                          <div class="col-4"><label>Tgl Berangkat</label><input type="date" name="sppdTglMulai" class="form-control"></div>
-                          <div class="col-4"><label>Tgl Kembali</label><input type="date" name="sppdTglSelesai" class="form-control"></div>
-                          <div class="col-4"><label>Lama (Hari)</label><input name="sppdLama" class="form-control" type="number"></div></div></div>
-                     </div>
-                     <div id="box-spt" class="form-box hide">
-                        <div class="mb-2"><label>Dasar Hukum</label><textarea name="dasarHukum" class="form-control" rows="2"></textarea></div>
-                        <div class="card p-3 bg-light mb-2"><b class="text-primary">Kepada:</b><div class="row g-2 mt-1"><div class="col-6"><input name="tujuanNama" class="form-control" placeholder="Nama"></div><div class="col-6"><input name="tujuanNip" class="form-control" placeholder="NIP"></div><div class="col-6"><input name="tujuanPangkat" class="form-control" placeholder="Pangkat"></div><div class="col-6"><input name="tujuanJabatan" class="form-control" placeholder="Jabatan"></div></div></div>
-                        <div class="mb-2"><label>Untuk</label><textarea name="isiUmum" class="form-control" rows="3"></textarea></div>
-                        <div class="bg-warning bg-opacity-10 p-3 border rounded"><label class="fw-bold small">Waktu:</label><div class="row g-2"><div class="col-6"><label>Mulai</label><input type="date" name="sptMulai" class="form-control"></div><div class="col-6"><label>Selesai</label><input type="date" name="sptSelesai" class="form-control"></div><div class="col-6"><label>Waktu</label><input name="sptWaktu" class="form-control"></div><div class="col-6"><label>Tempat</label><input name="sptTempat" class="form-control"></div></div></div>
-                     </div>
+
                      <div id="box-suket" class="form-box hide">
                         <div class="card p-3 bg-light mb-2"><b class="text-primary">Menerangkan:</b><div class="row g-2 mt-1">
                           <div class="col-6"><input name="tujuanNama" class="form-control" placeholder="Nama"></div>
@@ -650,9 +631,10 @@
     </div>
 </div>
 <div class="row mb-4">
-    <div class="col-md-4"><label>Nama Pejabat</label><input name="ttdNama" id="inTtdNama" class="form-control" readonly></div>
-    <div class="col-md-4"><label>Jabatan Tertulis</label><input name="ttdJabatan" id="inTtdJabatan" class="form-control" readonly></div>
-    <div class="col-md-4"><label>NIP (Bila ada)</label><input name="ttdNip" id="inTtdNip" class="form-control" readonly></div>
+    <div class="col-md-6"><label>Nama Pejabat</label><input name="ttdNama" id="inTtdNama" class="form-control" readonly></div>
+    <div class="col-md-6"><label>Jabatan Tertulis</label><input name="ttdJabatan" id="inTtdJabatan" class="form-control" readonly></div>
+    <div class="col-md-6"><label>NIP (Bila ada)</label><input name="ttdNip" id="inTtdNip" class="form-control" readonly></div>
+    <div class="col-md-6"><label>Tanggal TTD</label><input type="date" class="form-control" id="inpTglSaja" onchange="updateTanggalSaja()" required><input type="hidden" name="tanggalSaja" id="valTglSaja"></div>
 </div>
 
                      <div class="mb-4 hide" id="box-tembusan">
