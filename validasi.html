@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Validasi TTE Surat</title>
+    <link rel="icon" type="image/png" href="./imgsidimas.png">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding-top: 20px; padding-bottom: 100px; }
+        .verify-card { max-width: 480px; margin: 0 auto; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 6px solid #198754; overflow: hidden; margin-bottom: 20px;}
+        .logos { display: flex; justify-content: center; gap: 20px; margin-bottom: 15px; }
+        .logos img { height: 75px; object-fit: contain; }
+        .kop-text { text-align: center; margin-bottom: 25px; }
+        .nama-instansi { font-size: 1.1rem; font-weight: bold; color: #495057; text-transform: uppercase; }
+        .nama-sekolah { font-size: 1.4rem; font-weight: 900; color: #0d6efd; text-transform: uppercase; margin-top: 5px; }
+        
+        .pengumuman { background-color: #e8f5e9; padding: 15px; text-align: center; border-radius: 10px; margin-bottom: 25px; border: 1px solid #c3e6cb; }
+        .badge-tte { display: inline-block; background-color: #198754; color: white; padding: 6px 15px; border-radius: 30px; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 10px; }
+        .teks-pengumuman { font-size: 0.85rem; font-weight: 600; color: #155724; margin: 0; line-height: 1.4; }
+
+        .data-ttd { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 10px; padding: 20px; margin-bottom: 25px; }
+        .data-ttd p.judul { color: #0d6efd; font-weight: bold; margin-bottom: 15px; font-size: 0.95rem; border-bottom: 2px solid #dee2e6; padding-bottom: 8px;}
+        .data-row { margin-bottom: 10px; display: flex; flex-direction: column; }
+        .d-label { font-size: 0.8rem; color: #6c757d; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px;}
+        .d-value { font-size: 1rem; font-weight: 600; color: #212529; }
+        .val-nomor { color: #dc3545; font-size: 1.1rem; word-break: break-word; }
+        
+        .btn-container { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; padding: 15px; box-shadow: 0 -5px 20px rgba(0,0,0,0.15); z-index: 1050; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+        .hide { display: none !important; }
+        
+        #loading-screen { text-align: center; margin-top: 100px; }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status"></div>
+        <h5 class="mt-3 text-muted">Memverifikasi Dokumen...</h5>
+    </div>
+
+    <div id="error-screen" class="container hide">
+        <div class="alert alert-danger text-center mt-5 p-4 shadow-sm rounded-4">
+            <i class="fas fa-times-circle fa-4x mb-3"></i>
+            <h4>Verifikasi Gagal!</h4>
+            <p id="error-msg">Dokumen tidak ditemukan atau QR Code tidak valid.</p>
+        </div>
+    </div>
+
+    <div id="result-screen" class="container px-3 hide">
+        <div class="verify-card p-4">
+            <div class="logos">
+                <img id="v-logo1" src="" alt="Logo" class="hide">
+                <img id="v-logo2" src="" alt="Logo" class="hide">
+            </div>
+            
+            <div class="kop-text">
+                <div class="nama-instansi" id="v-instansi">Loading...</div>
+                <div class="nama-sekolah" id="v-sekolah">Loading...</div>
+            </div>
+
+            <div class="pengumuman">
+                <div class="badge-tte"><i class="fas fa-check-circle me-1"></i> DOKUMEN VALID</div>
+                <p class="teks-pengumuman">NASKAH SURAT INI DIKELOLA DENGAN APLIKASI SISTEM DIGITAL MANAJEMEN ARSIP SURAT</p>
+            </div>
+
+<div class="data-ttd">
+    <p class="judul"><i class="fas fa-pen-nib me-2"></i>Naskah ini telah ditandatangani secara elektronik oleh :</p>
+     <div class="data-row"><span class="d-label">Nama Pejabat</span><span class="d-value" id="v-nama"></span></div>
+     <div class="data-row"><span class="d-label">NIP</span><span class="d-value" id="v-nip"></span></div>
+     <div class="data-row"><span class="d-label">Jabatan</span><span class="d-value" id="v-jabatan">Kepala Desa</span></div>
+
+    <div class="data-row"><span class="d-label">Instansi</span><span class="d-value text-primary" id="v-sekolah-ttd"></span></div>
+    <div class="data-row mt-3"><span class="d-label">Nomor Surat</span><span class="d-value val-nomor" id="v-nomor"></span></div>
+    <div class="data-row"><span class="d-label">Ditandatangani Pada</span><span class="d-value text-success"><i class="far fa-clock me-1"></i><span id="v-waktu"></span></span></div>
+    
+    <div class="data-row mt-3 pt-3" style="border-top: 1px dashed #dee2e6;">
+        <span class="d-label text-success"><i class="fas fa-fingerprint me-1"></i> Sidik Jari Dokumen (Hash)</span>
+        <span class="d-value" style="font-family: monospace; font-size: 1.1rem; color: #d63384; letter-spacing: 2px;" id="v-hash"></span>
+    </div>
+</div>
+
+            <div class="text-center text-muted d-none d-md-block" style="font-size:0.75rem;">&copy; 2026 SiDiMAS Verifier System</div>
+        </div>
+        
+        <div class="btn-container">
+            <a href="#" id="btn-pdf" target="_blank" class="btn btn-primary w-100 py-3 fw-bold shadow-sm rounded-pill btn-unduh">
+                <i class="fas fa-file-pdf me-2"></i> LIHAT SURAT DIGITAL
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // MASUKKAN LINK APPS SCRIPT ANDA DI SINI
+        const API_URL = "https://script.google.com/macros/s/AKfycbyyXeGZEDuGfBwdCZweYrD0fcfNiKKhmyiLRrtvG7WhEhoIKBrCfKjad-jPwZI67hVT/exec";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ambil Parameter ID dari URL (?id=...)
+            const urlParams = new URLSearchParams(window.location.search);
+            const idSurat = urlParams.get('id');
+
+            if (!idSurat) {
+                tampilkanError("ID Surat tidak valid. Harap scan langsung dari QR Code aslinya.");
+                return;
+            }
+
+            // Panggil API Google Apps Script secara tersembunyi (Fetch)
+            fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify({ action: 'getValidasiData', payload: { id: idSurat } }),
+            })
+            .then(res => res.json())
+            .then(res => {
+                if (res.success) {
+                    renderData(res.data);
+                } else {
+                    tampilkanError(res.message);
+                }
+            })
+            .catch(err => {
+                tampilkanError("Gagal terhubung ke server verifikasi. Coba lagi.");
+            });
+        });
+
+        function renderData(data) {
+            document.getElementById('loading-screen').classList.add('hide');
+            document.getElementById('result-screen').classList.remove('hide');
+
+            if(data.logoInstansi) { document.getElementById('v-logo1').src = data.logoInstansi; document.getElementById('v-logo1').classList.remove('hide'); }
+            if(data.logoSekolah) { document.getElementById('v-logo2').src = data.logoSekolah; document.getElementById('v-logo2').classList.remove('hide'); }
+            
+            document.getElementById('v-instansi').innerText = data.namaInstansi;
+            document.getElementById('v-sekolah').innerText = data.namaSekolah;
+            
+            document.getElementById('v-nama').innerText = data.namaKepsek;
+            document.getElementById('v-nip').innerText = data.nipKepsek;
+            document.getElementById('v-sekolah-ttd').innerText = data.namaSekolah;
+            document.getElementById('v-ins2').innerText = data.namaInstansi;
+            document.getElementById('v-jabatan').innerText = data.jabatanKades || 'Kepala Desa';
+            
+            // Format Nomor Surat (Tambahkan <wbr> untuk memotong baris)
+            document.getElementById('v-nomor').innerHTML = data.noSurat.split('/').join('/<wbr>');
+            // Memaksa tulisan <br> (jika terbaca sebagai teks) agar diubah menjadi garis baru sungguhan
+            document.getElementById('v-waktu').innerHTML = data.waktuTtd.replace("&lt;br&gt;", "<br>");
+            
+            document.getElementById('btn-pdf').href = data.fileUrl;
+             // TAMBAHAN: Menampilkan Sidik Jari ke layar HTML
+            document.getElementById('v-hash').innerText = data.sidikJari;  
+        }
+
+        function tampilkanError(pesan) {
+            document.getElementById('loading-screen').classList.add('hide');
+            document.getElementById('error-screen').classList.remove('hide');
+            document.getElementById('error-msg').innerText = pesan;
+        }
+    </script>
+</body>
+</html>
+
