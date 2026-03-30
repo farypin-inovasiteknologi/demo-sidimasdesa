@@ -631,9 +631,14 @@
     </div>
 </div>
 <div class="row mb-4">
-    <div class="col-md-6"><label>Nama Pejabat</label><input name="ttdNama" id="inTtdNama" class="form-control" readonly></div>
-    <div class="col-md-6"><label>Jabatan Tertulis</label><input name="ttdJabatan" id="inTtdJabatan" class="form-control" readonly></div>
-    <div class="col-md-6"><label>NIP (Bila ada)</label><input name="ttdNip" id="inTtdNip" class="form-control" readonly></div>
+    <div class="col-md-4"><label>Nama Pejabat</label><input name="ttdNama" id="inTtdNama" class="form-control" readonly></div>
+    
+    <div class="col-md-4">
+        <label>Jabatan Tertulis</label>
+        <textarea name="ttdJabatan" id="inTtdJabatan" class="form-control" rows="2" readonly style="resize: none;"></textarea>
+    </div>
+    
+    <div class="col-md-4"><label>NIP (Bila ada)</label><input name="ttdNip" id="inTtdNip" class="form-control" readonly></div>
     <div class="col-md-6"><label>Tanggal TTD</label><input type="date" class="form-control" id="inpTglSaja" onchange="updateTanggalSaja()" required><input type="hidden" name="tanggalSaja" id="valTglSaja"></div>
 </div>
 
