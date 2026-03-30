@@ -458,12 +458,7 @@
                             </div>
                         </div>
                      </div>
-                     <div id="box-sk" class="form-box hide">
-                        <div class="mb-2"><label>TENTANG</label><input name="perihal" class="form-control" placeholder="PEMBAGIAN TUGAS GURU.............."></div>
-                        <div class="mb-2"><label>Menimbang</label><textarea name="skMenimbang" class="form-control" rows="3">a. Bahwa...  b. Bahwa...... dst</textarea></div>
-                        <div class="mb-2"><label>Mengingat</label><textarea name="skMengingat" class="form-control" rows="3">1. UU nomor... 2. Permendagri nomor...dst</textarea></div>
-                        <div class="mb-2"><label>Menetapkan</label><textarea name="skMenetapkan" class="form-control" rows="5">Kesatu:..... Kedua:............ Ketiga:...........</textarea></div>
-                     </div>
+
 
                      <div id="box-suket" class="form-box hide">
                         <div class="card p-3 bg-light mb-2"><b class="text-primary">Menerangkan:</b><div class="row g-2 mt-1">
@@ -501,6 +496,8 @@
                         <div class="mb-2"><label>Melaksanakan Tugas Sebagai</label><textarea name="spmtJabatanBaru" class="form-control" rows="2"></textarea></div>
                         <div class="row mb-2"><div class="col-6"><label>TMT (Tanggal Mulai)</label><input type="date" name="spmtTglMulai" class="form-control"></div><div class="col-6"><label>Sampai Tanggal</label><input type="date" name="spmtTglSelesai" class="form-control"></div></div>
                      </div>
+
+          
                      <div id="box-warga" class="form-box hide">
     <div class="card p-3 bg-light mb-2"><b class="text-primary">Data Warga:</b>
         <div class="row g-2 mt-1">
@@ -513,10 +510,20 @@
             <div class="col-12"><label>Alamat Lengkap</label><input name="wargaAlamat" class="form-control" placeholder="RT 01 RW 02..."></div>
         </div>
     </div>
+    <div class="col-md-12">
     <div class="mb-2"><label>Keterangan Isi Surat / Keperluan</label>
         <textarea name="suketIsi" class="form-control" rows="3" placeholder="Bahwa yang bersangkutan memiliki usaha warung makan..."></textarea>
     </div>
+    </div>
 </div>
+
+                     <div id="box-sk" class="form-box hide">
+                      <div class="col-md-12">
+                        <div class="mb-2"><label>TENTANG</label><input name="perihal" class="form-control" placeholder="PEMBAGIAN TUGAS GURU.............."></div>
+                        <div class="mb-2"><label>Menimbang</label><textarea name="skMenimbang" class="form-control" rows="3">a. Bahwa...  b. Bahwa...... dst</textarea></div>
+                        <div class="mb-2"><label>Mengingat</label><textarea name="skMengingat" class="form-control" rows="3">1. UU nomor... 2. Permendagri nomor...dst</textarea></div>
+                        <div class="mb-2"><label>Menetapkan</label><textarea name="skMenetapkan" class="form-control" rows="5">Kesatu:..... Kedua:............ Ketiga:...........</textarea></div>
+                     </div></div>
 
 <div id="box-pindah" class="form-box hide">
     <div class="card p-3 bg-light mb-2"><b class="text-primary">Data Identitas (Kepala Keluarga / Pemohon):</b>
@@ -583,15 +590,12 @@
     </div>
 </div>
 
-<div id="box-spt" class="form-box hide">
-    <div class="card p-3 bg-light mb-2"><b class="text-primary">Memberikan Tugas Kepada:</b>
-        <div class="row g-2 mt-1">
-            <div class="col-6"><input name="tujuanNama" class="form-control" placeholder="Nama Perangkat"></div>
-            <div class="col-6"><input name="tujuanJabatan" class="form-control" placeholder="Kasi Pemerintahan dll"></div>
-        </div>
-    </div>
-    <div class="mb-2"><label>Tujuan Penugasan</label><textarea name="isiUmum" class="form-control" rows="3" placeholder="Untuk menghadiri rapat koordinasi..."></textarea></div>
-</div>
+                    <div id="box-spt" class="form-box hide">
+                        <div class="mb-2"><label>Dasar Hukum</label><textarea name="dasarHukum" class="form-control" rows="2"></textarea></div>
+                        <div class="card p-3 bg-light mb-2"><b class="text-primary">Kepada:</b><div class="row g-2 mt-1"><div class="col-6"><input name="tujuanNama" class="form-control" placeholder="Nama"></div><div class="col-6"><input name="tujuanNip" class="form-control" placeholder="NIP"></div><div class="col-6"><input name="tujuanPangkat" class="form-control" placeholder="Pangkat"></div><div class="col-6"><input name="tujuanJabatan" class="form-control" placeholder="Jabatan"></div></div></div>
+                        <div class="mb-2"><label>Untuk</label><textarea name="isiUmum" class="form-control" rows="3"></textarea></div>
+                        <div class="bg-warning bg-opacity-10 p-3 border rounded"><label class="fw-bold small">Waktu:</label><div class="row g-2"><div class="col-6"><label>Mulai</label><input type="date" name="sptMulai" class="form-control"></div><div class="col-6"><label>Selesai</label><input type="date" name="sptSelesai" class="form-control"></div><div class="col-6"><label>Waktu</label><input name="sptWaktu" class="form-control"></div><div class="col-6"><label>Tempat</label><input name="sptTempat" class="form-control"></div></div></div>
+                     </div>
 
 <div id="box-sppd" class="form-box hide">
     <div class="mb-2"><label>Maksud Perjalanan</label><input name="perihal" class="form-control" placeholder="Konsultasi Dana Desa..."></div>
