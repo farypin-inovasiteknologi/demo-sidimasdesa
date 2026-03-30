@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>Demo SiDiMAS TTE AI</title>
+    <title>Demo SiDiMAS TTE DESA</title>
     <link rel="icon" type="image/png" href="./imgsidimas.png">
 
 
@@ -105,9 +105,9 @@
     }
 
     .branding-content { width: 100%; }
-    .logo-instansi-login, .logo-sekolah-login { height: 85px; object-fit: contain; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2)); }
+    .logo-instansi-login, .logo-desa-login { height: 85px; object-fit: contain; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2)); }
     .text-instansi { font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.9; margin-top: 15px;}
-    .text-sekolah { font-size: 2rem; font-weight: 900; text-transform: uppercase; color: #ffc107; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); line-height: 1.1; margin-top: 5px; }
+    .text-desa { font-size: 2rem; font-weight: 900; text-transform: uppercase; color: #ffc107; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); line-height: 1.1; margin-top: 5px; }
     .divider-light { border-top: 2px solid rgba(255,255,255,0.2); width: 50px; margin: 0 auto; }
     .logo-sidimas-large { height: 110px; object-fit: contain; filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.3)); }
     .app-desc { font-size: 1.1rem; font-weight: 500; opacity: 0.9; }
@@ -144,7 +144,7 @@
     .kop-text { text-align: center; color: #333; max-width: 700px; }
     .txt-instansi { font-size: 1rem; font-weight: bold; display: block; letter-spacing: 1px; line-height: 1.2;}
     .txt-opd { font-size: 1.1rem; font-weight: bold; display: block; line-height: 1.2;}
-    .txt-sekolah { font-size: 1.4rem; font-weight: 900; display: block; color: var(--main-color); text-transform: uppercase; line-height: 1.2; margin: 5px 0;}
+    .txt-desa { font-size: 1.4rem; font-weight: 900; display: block; color: var(--main-color); text-transform: uppercase; line-height: 1.2; margin: 5px 0;}
     .txt-alamat { font-size: 0.85rem; font-style: italic; display: block; color: #555;}
     
     .footer { text-align: center; padding: 15px; font-size: 0.8rem; color: #6c757d; border-top: 1px solid #dee2e6; background: white; margin-top: auto; }
@@ -185,8 +185,8 @@
             padding: 25px; 
             justify-content: center; 
         }
-        .text-sekolah { font-size: 1.5rem; }
-        .logo-instansi-login, .logo-sekolah-login { height: 70px; }
+        .text-desa { font-size: 1.5rem; }
+        .logo-instansi-login, .logo-desa-login { height: 70px; }
         .logo-sidimas-large { height: 90px; }
         .form-content { padding: 30px 20px; }
         .bg-form { background-color: #ffffff; }
@@ -200,7 +200,7 @@
         .kop-text { font-size: 0.8rem; }
         .txt-opd, .txt-alamat, .kop-text .small { display: none !important; }
         .txt-instansi { font-size: 0.7rem; }
-        .txt-sekolah { font-size: 0.9rem; margin: 2px 0; }
+        .txt-desa { font-size: 0.9rem; margin: 2px 0; }
 
         /* GAYA MENU BAWAH (BOTTOM NAVIGATION) */
         .mobile-bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; display: flex; justify-content: space-around; align-items: flex-end; padding: 8px 5px 12px 5px; z-index: 1050; box-shadow: 0 -4px 15px rgba(0,0,0,0.1); border-top-left-radius: 20px; border-top-right-radius: 20px; }
@@ -228,11 +228,11 @@
           <div class="branding-content animation-fade">
               <div class="d-flex justify-content-center align-items-center mb-3 gap-3">
                   <img id="logLogo1" class="logo-instansi-login" src="" alt="Logo Instansi">
-                  <img id="logLogo2" class="logo-sekolah-login" src="" alt="Logo Sekolah">
+                  <img id="logLogo2" class="logo-desa-login" src="" alt="Logo Desa">
               </div>
               
               <div class="text-instansi" id="logInstansi">INSTANSI</div>
-              <div class="text-sekolah" id="logSekolah">LOADING SYSTEM...</div>
+              <div class="text-desa" id="logDesa">LOADING SYSTEM...</div>
               
               <hr class="divider-light my-4">
               
@@ -274,7 +274,7 @@
               <form onsubmit="prosesLogin(event)" autocomplete="off">
                   <div class="form-floating mb-3 text-start">
                       <input id="u" class="form-control rounded-3" placeholder="U" required>
-                      <label>Username (admin/kepsek/staftu)</label>
+                      <label>Username (admin/kades/staf)</label>
                   </div>
                   <div class="input-group mb-4">
                       <div class="form-floating flex-grow-1 text-start">
@@ -319,13 +319,13 @@
       <div class="text-center mb-4"><h4 class="fw-bold">SiDiMAS</h4><div class="badge bg-warning text-dark rounded-pill px-3" id="lblRole">Role</div></div>
       <ul class="nav flex-column">
         <li class="nav-item"><a class="nav-link active" onclick="nav('home', this)"><i class="fas fa-chart-pie"></i>Dashboard</a></li>
-        <li class="nav-item non-kepsek"><a class="nav-link text-white bg-success bg-opacity-25" onclick="nav('buat', this)"><i class="fas fa-file-word"></i>Buat Surat</a></li>
-        <li class="nav-item"><a class="nav-link" onclick="nav('masuk', this)"><i class="fas fa-inbox"></i>Surat Masuk</a></li>
-        <li class="nav-item"><a class="nav-link" onclick="nav('keluar', this)"><i class="fas fa-paper-plane"></i>Surat Keluar</a></li>
-        <li class="nav-item admin-only"><a class="nav-link text-warning fw-bold" onclick="nav('verifikasi', this)"><i class="fas fa-clipboard-check"></i>Verifikasi Surat</a></li>
-        <li class="nav-item user-only hide"><a class="nav-link text-info fw-bold" onclick="nav('hasil', this)"><i class="fas fa-file-export"></i>Hasil Surat</a></li>
-        <li class="nav-item kepsek-only"><a class="nav-link text-success fw-bold" onclick="nav('ttd', this)"><i class="fas fa-qrcode"></i>TTE Surat</a></li>
-        <li class="nav-item kepsek-only"><a class="nav-link text-white bg-secondary bg-opacity-25" onclick="nav('profil-kepsek', this)"><i class="fas fa-user-tie"></i>Data Kepsek</a></li>
+       <li class="nav-item non-kades"><a class="nav-link text-white bg-success bg-opacity-25" onclick="nav('buat', this)"><i class="fas fa-file-word"></i>Buat Surat</a></li>
+<li class="nav-item"><a class="nav-link" onclick="nav('masuk', this)"><i class="fas fa-inbox"></i>Surat Masuk</a></li>
+<li class="nav-item"><a class="nav-link" onclick="nav('keluar', this)"><i class="fas fa-paper-plane"></i>Surat Keluar</a></li>
+<li class="nav-item admin-only"><a class="nav-link text-warning fw-bold" onclick="nav('verifikasi', this)"><i class="fas fa-clipboard-check"></i>Verifikasi Surat</a></li>
+<li class="nav-item user-only hide"><a class="nav-link text-info fw-bold" onclick="nav('hasil', this)"><i class="fas fa-file-export"></i>Hasil Surat</a></li>
+<li class="nav-item kades-only"><a class="nav-link text-success fw-bold" onclick="nav('ttd', this)"><i class="fas fa-qrcode"></i>TTE Surat</a></li>
+<li class="nav-item kades-only"><a class="nav-link text-white bg-secondary bg-opacity-25" onclick="nav('profil-kades', this)"><i class="fas fa-user-tie"></i>Data Kades</a></li>
         <li class="nav-item admin-only"><a class="nav-link" onclick="nav('users', this)"><i class="fas fa-users"></i>Manajemen User</a></li>
         <li class="nav-item admin-only"><a class="nav-link" onclick="nav('setting', this)"><i class="fas fa-cogs"></i>Settings</a></li>
         <li class="nav-item"><a class="nav-link" onclick="modalUbahProfil()"><i class="fas fa-user-edit"></i>Ubah Profil</a></li>
@@ -336,7 +336,7 @@
     <div class="main-content">
       <div class="header-kop shadow-sm">
         <img id="logoKiri" class="kop-logo" src="">
-        <div class="kop-text"><span id="txtInstansi" class="txt-instansi"></span><span id="txtOpd" class="txt-opd"></span><span id="txtSekolah" class="txt-sekolah"></span><span id="txtAlamat" class="txt-alamat"></span><div class="small mt-1 text-muted"><span id="txtEmail"></span> | <span id="txtWeb"></span></div></div>
+        <div class="kop-text"><span id="txtInstansi" class="txt-instansi"></span><span id="txtOpd" class="txt-opd"></span><span id="txtDesa" class="txt-desa"></span><span id="txtAlamat" class="txt-alamat"></span><div class="small mt-1 text-muted"><span id="txtEmail"></span> | <span id="txtWeb"></span></div></div>
         <img id="logoKanan" class="kop-logo" src="">
       </div>
 
@@ -394,10 +394,10 @@
                 <br><span class="badge bg-dark mt-1">{NOMOR_SURAT}</span> : Untuk letak Nomor Surat
                 <br><span class="badge bg-dark mt-1">{TEMPAT_TTD}</span> : Untuk Tempat ttd Surat
                 <br><span class="badge bg-dark mt-1">{TANGGAL_TTD}</span> : Untuk Tanggal Surat
-                <br><span class="badge bg-dark mt-1">{QR_TTE}</span> : letakkan di atas nama Kepsek (Sistem otomatis mengatur jaraknya, <b>jangan beri terlalu banyak Enter!</b>)
-                <br><span class="badge bg-dark mt-1">{TTD_NAMA}</span> : Untuk Nama Kepala Sekolah
+                <br><span class="badge bg-dark mt-1">{QR_TTE}</span> : letakkan di atas nama Kades/Sekdes (Sistem otomatis mengatur jaraknya, <b>jangan beri terlalu banyak Enter!</b>)
+                <br><span class="badge bg-dark mt-1">{TTD_NAMA}</span> : Untuk Nama Kepala Desa
                 <br><span class="badge bg-dark mt-1">{TTD_PANGKAT}</span> : Untuk Pangkat/Golongan
-                <br><span class="badge bg-dark mt-1">{TTD_NIP}</span> : Untuk NIP Kepala Sekolah
+                <br><span class="badge bg-dark mt-1">{TTD_NIP}</span> : Untuk NIP Kepala Desa (bila ada)
         </ul>
         <hr>
         <label class="fw-bold mb-1 text-primary">Upload File Anda (.docx):</label>
@@ -411,7 +411,7 @@
                         <div class="col-md-5"><label>Kode Klasifikasi (Berdasarkan Permendagri No. 83 Tahun 2022)</label>
                         <select class="form-select" id="selKodeArsip" onchange="updatePreview()"></select></div>
                         <div class="col-md-3"><label>No. Urut Otomatis (bisa diedit)</label><input class="form-control" id="inpNoUrut" placeholder="001" onkeyup="updatePreview()"></div>
-                        <div class="col-md-4"><label>Kode Lembaga</label><input class="form-control" id="inpKodeSekolah" placeholder="loading..." onkeyup="updatePreview()" readonly style="background-color: #e9ecef;"></div>
+                        <div class="col-md-4"><label>Kode Lembaga</label><input class="form-control" id="inpKodeDesa" placeholder="loading..." onkeyup="updatePreview()" readonly style="background-color: #e9ecef;"></div>
                      </div>
                      <div class="preview-box" id="previewNomor">autoload...</div><input type="hidden" name="nomorFull" id="nomorFull">
                      <div class="row mb-3">
@@ -477,7 +477,7 @@
                         <div class="mb-2"><label>Isi Nota</label><textarea name="isiUmum" class="form-control" rows="4"></textarea></div>
                      </div>
                      <div id="box-sis" class="form-box hide">
-                        <div class="alert alert-info py-2 small">Data Kepala Sekolah diambil otomatis.</div>
+                        <div class="alert alert-info py-2 small">Data Kepala Desa diambil otomatis.</div>
                         <div class="card p-3 bg-light mb-2"><b class="text-primary">Data Siswa:</b><div class="row g-2 mt-1"><div class="col-6"><label>Nama Siswa</label><input name="siswaNama" class="form-control"></div><div class="col-6"><label>NIS / NISN</label><input name="siswaNis" class="form-control"></div><div class="col-6"><label>TTL</label><input name="siswaTtl" class="form-control"></div><div class="col-6"><label>JK</label><select name="siswaJk" class="form-select"><option>Laki-laki</option><option>Perempuan</option></select></div><div class="col-6"><label>Kelas</label><input name="siswaKelas" class="form-control"></div><div class="col-6"><label>Ortu</label><input name="siswaOrtu" class="form-control"></div></div></div>
                         <div class="mb-2"><label>Uraian Keterangan</label><textarea name="siswaKet" class="form-control" rows="3">Adalah benar peserta didik...</textarea></div>
                      </div>
@@ -495,7 +495,7 @@
                         <div class="row"><div class="col-4"><label>Lama</label><input name="sppdLama" class="form-control" type="number"></div><div class="col-4"><label>Mulai</label><input type="date" name="sppdTglMulai" class="form-control"></div><div class="col-4"><label>s.d</label><input type="date" name="sppdTglSelesai" class="form-control"></div></div>
                      </div>
                      <div id="box-spmt" class="form-box hide">
-                        <div class="alert alert-info small py-1">Data Kepala Sekolah diambil otomatis.</div>
+                        <div class="alert alert-info small py-1">Data Kepala Desa diambil otomatis.</div>
                         <div class="card p-3 bg-light mb-2"><b class="text-primary">Data Pegawai:</b><div class="row g-2 mt-1"><div class="col-6"><input name="tujuanNama" class="form-control" placeholder="Nama"></div><div class="col-6"><input name="tujuanNip" class="form-control" placeholder="NIP"></div><div class="col-6"><input name="tujuanPangkat" class="form-control" placeholder="Pangkat/Golongan"></div><div class="col-6"><input name="tujuanJabatan" class="form-control" placeholder="Jabatan"></div></div></div>
                         <div class="mb-2"><label>Berdasarkan Peraturan</label><textarea name="dasarHukum" class="form-control" rows="2" placeholder="SK Nomor..."></textarea></div>
                         <div class="mb-2"><label>Melaksanakan Tugas Sebagai</label><textarea name="spmtJabatanBaru" class="form-control" rows="2"></textarea></div>
@@ -652,7 +652,7 @@
                  </div>
              </div>
          </div>
-     
+
 
       <div id="page-masuk" class="page-view hide">
           <div class="card p-3 shadow-sm border-0">
@@ -683,10 +683,10 @@
           <div class="card p-3 shadow-sm border-0 border-top border-success border-4">
               <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
                   <h5 class="text-success mb-0"><i class="fas fa-qrcode me-2"></i>Antrean Tanda Tangan (TTE)</h5>
-                  <button class="btn btn-light btn-sm btn-refresh text-success" onclick="refreshKepsek()" title="Refresh"><i class="fas fa-sync-alt"></i></button>
+                  <button class="btn btn-light btn-sm btn-refresh text-success" onclick="refreshKades()" title="Refresh"><i class="fas fa-sync-alt"></i></button>
               </div>
               <div class="table-responsive">
-                  <table id="tKepsek" class="table table-striped table-bordered w-100 table-hover"></table>
+                  <table id="tKades" class="table table-striped table-bordered w-100 table-hover"></table>
               </div>
           </div>
       </div>
@@ -712,7 +712,7 @@
               <div class="card-body">
                   <div class="alert alert-warning border-warning shadow-sm mb-4"><div class="d-flex justify-content-between align-items-center"><div><i class="fas fa-database fa-lg me-2"></i><strong>Backup Database</strong><div class="small text-muted">Cadangkan data surat masuk, keluar, dan user ke Spreadsheet baru.</div></div><button id="btnBackup" class="btn btn-warning fw-bold" onclick="doBackup()"><span>Backup Sekarang</span><span class="spinner-border spinner-border-sm hide" role="status"></span></button></div></div>
                   <form onsubmit="simpanSetting(event)" autocomplete="off">
-                      <h6 class="text-primary border-bottom pb-2">Identitas Sekolah</h6>
+                      <h6 class="text-primary border-bottom pb-2">Identitas Desa</h6>
                       <div class="row mb-3">
                  <div class="col-md-6">
           <label class="text-success fw-bold">Logo Instansi</label>
@@ -725,34 +725,40 @@
       </div>
       
       <div class="col-md-6">
-          <label class="text-success fw-bold">Logo Sekolah</label>
+          <label class="text-success fw-bold">Logo Desa (kosongkan jika tidak ada)</label>
           <input type="file" id="fLogo2" class="form-control" accept="image/*">
           <div id="wrapPreview2" class="mt-2 hide align-items-center">
               <img id="imgPreview2" src="" class="rounded border shadow-sm" style="width:70px; height:70px; object-fit:contain; background:#fff;">
-              <button type="button" class="btn btn-sm btn-outline-danger ms-3" onclick="hapusLogo('sekolah')"><i class="fas fa-trash"></i> Hapus Logo</button>
+              <button type="button" class="btn btn-sm btn-outline-danger ms-3" onclick="hapusLogo('desa')"><i class="fas fa-trash"></i> Hapus Logo</button>
           </div>
-          <input type="hidden" name="delete_sekolah" id="delSekolah" value="false">
+          <input type="hidden" name="delete_desa" id="delDesa" value="false">
       </div>
   </div>
                       <div class="row mb-2">
                       <div class="col-md-6"><label class="text-success">Nama Instansi</label><input name="namaInstansi" id="inInstansi" class="form-control" placeholder="PEMERINTAH PROVINSI..."></div>
-                      <div class="col-md-6"><label class="text-success">Nama Dinas/OPD (boleh dikosongkan)</label><input name="namaOpd" id="inOpd" class="form-control" placeholder="ex. DINAS PENDIDIKAN......"></div></div>
-                      <label class="text-success">Nama Sekolah</label><input name="namaSekolah" id="inSekolah" class="form-control mb-2 fw-bold">
-                      <label class="text-success">Alamat Lengkap</label><input name="alamatSekolah" id="inAlamat" class="form-control mb-2">
+                      <div class="col-md-6"><label class="text-success">Nama Kecamatan</label><input name="namaOpd" id="inOpd" class="form-control" placeholder="ex. KECAMATAN......"></div></div>
+                      <label class="text-success">Nama Desa</label><input name="namaDesa" id="inDesa" class="form-control mb-2 fw-bold">
+                      <label class="text-success">Alamat Lengkap</label><input name="alamatDesa" id="inAlamat" class="form-control mb-2">
 
                       <div class="row mb-2">
-                      <div class="col-md-6"><label class="text-success">Email</label><input name="emailSekolah" id="inEmail" class="form-control"></div>
-                      <div class="col-md-6"><label class="text-success">Website</label><input name="webSekolah" id="inWeb" class="form-control"></div></div>
+                      <div class="col-md-6"><label class="text-success">Email</label><input name="emailDesa" id="inEmail" class="form-control"></div>
+                      <div class="col-md-6"><label class="text-success">Website</label><input name="webDesa" id="inWeb" class="form-control"></div></div>
 
                       <div class="mb-3"><label class="fw-bold text-success">Kode Lembaga</label><input class="form-control border-success" list="listLembaga" name="kodeLembaga" id="inKodeLembaga" placeholder="Ketik manual atau pilih dari daftar..."><datalist id="listLembaga"></datalist></div>
                       
-                      <h6 class="text-primary border-bottom pb-2 mt-4">Data Kepala Sekolah</h6>
-                      <div class="row mb-2">
-                      <div class="col-md-6"><label class="text-success">Nama Lengkap</label><input name="kepsekNama" id="inKepsekNama" class="form-control"></div>
-                      <div class="col-md-6"><label class="text-success">NIP</label><input name="kepsekNip" id="inKepsekNip" class="form-control" oninput="this.value = this.value.replace(/[^0-9]/g, '')"></div></div>
-                      <div class="row mb-2">
-                      <div class="col-md-6"><label class="text-success">Pangkat/Golongan</label><select name="kepsekPangkat" id="inKepsekPangkat" class="form-select"><option>Pengatur Muda (II/a)</option><option>Pengatur Muda Tingkat I (II/b)</option><option>Pengatur (II/c)</option><option>Pengatur Tingkat I (II/d)</option><option>Penata Muda (III/a)</option><option>Penata Muda Tingkat I (III/b)</option><option>Penata (III/c)</option><option>Penata Tingkat I (III/d)</option><option>Pembina (IV/a)</option><option>Pembina Tingkat I (IV/b)</option><option>Pembina Utama Muda (IV/c)</option><option>Pembina Utama Madya (IV/d)</option><option>Pembina Utama (IV/e)</option></select></div>
-                      <div class="col-md-6"><label class="text-success">Kota/Tempat TTD Surat</label><input name="kotaSurat" id="inKotaSurat" class="form-control"></div></div>
+                      <h6 class="text-primary border-bottom pb-2 mt-4">Data Kepala Desa & Sekdes</h6>
+<div class="row mb-2">
+    <div class="col-md-4"><label class="text-success">Nama Kepala Desa</label><input name="kadesNama" id="inKadesNama" class="form-control"></div>
+    <div class="col-md-4"><label class="text-success">NIP Kades (Bila ada)</label><input name="kadesNip" id="inKadesNip" class="form-control" oninput="this.value = this.value.replace(/[^0-9]/g, '')"></div>
+    <div class="col-md-4"><label class="text-success">Jabatan Tertulis</label><input name="kadesPangkat" id="inKadesPangkat" class="form-control" placeholder="Kepala Desa"></div>
+</div>
+<div class="row mb-2">
+    <div class="col-md-6"><label class="text-success">Nama Sekretaris Desa</label><input name="sekdesNama" id="inSekdesNama" class="form-control"></div>
+    <div class="col-md-6"><label class="text-success">NIP Sekdes</label><input name="sekdesNip" id="inSekdesNip" class="form-control" oninput="this.value = this.value.replace(/[^0-9]/g, '')"></div>
+</div>
+<div class="row mb-2">
+    <div class="col-md-6"><label class="text-success">Kota/Tempat TTD Surat</label><input name="kotaSurat" id="inKotaSurat" class="form-control"></div>
+</div>
                       <h6 class="text-primary border-bottom pb-2 mt-4">Tampilan</h6>
                       <label class="text-success">Warna Tema</label><input type="color" name="warnaAplikasi" id="inWarna" class="form-control form-control-color w-100 mb-3">
                       <button class="btn btn-primary w-100"><i class="fas fa-save"></i> SIMPAN PENGATURAN</button>
@@ -761,31 +767,29 @@
           </div>
       </div>
 
-      <div id="page-profil-kepsek" class="page-view hide">
+      <div id="page-profil-kades" class="page-view hide">
     <div class="card shadow-sm border-0 border-top border-secondary border-4">
         <div class="card-header bg-white d-flex justify-content-between align-items-center">
-            <h5 class="mb-0 text-secondary"><i class="fas fa-user-tie me-2"></i>Data Penandatangan (Kepsek)</h5>
+            <h5 class="mb-0 text-secondary"><i class="fas fa-user-tie me-2"></i>Data Penandatangan (Kades)</h5>
             <button class="btn btn-light btn-sm btn-refresh text-secondary" onclick="loadInitData()" title="Refresh"><i class="fas fa-sync-alt"></i></button>
         </div>
         <div class="card-body">
             <div class="alert alert-info small py-2"><i class="fas fa-info-circle me-1"></i> Pastikan data di bawah ini benar, karena akan tercetak di setiap dokumen yang Anda TTE.</div>
-            <form onsubmit="simpanSettingKepsek(event)" autocomplete="off">
+            <form onsubmit="simpanSettingKades(event)" autocomplete="off">
                 <div class="mb-3">
-                    <label class="fw-bold text-secondary">Nama Lengkap (Beserta Gelar)</label>
-                    <input name="kepsekNama" id="inKepsekNama2" class="form-control form-control-lg" required>
+                    <label class="fw-bold text-secondary">Nama Kepala Desa (Beserta Gelar)</label>
+                    <input name="kadesNama" id="inKadesNama2" class="form-control form-control-lg" required>
                 </div>
                 <div class="mb-3">
-                    <label class="fw-bold text-secondary">NIP</label>
-                    <input name="kepsekNip" id="inKepsekNip2" class="form-control form-control-lg" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                    <label class="fw-bold text-secondary">NIP (Kosongkan bila tidak ada)</label>
+                    <input name="kadesNip" id="inKadesNip2" class="form-control form-control-lg" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                 </div>
                 <div class="mb-4">
-                    <label class="fw-bold text-secondary">Pangkat / Golongan</label>
-                    <select name="kepsekPangkat" id="inKepsekPangkat2" class="form-select form-select-lg">
-                        <option>Pengatur Muda (II/a)</option><option>Pengatur Muda Tingkat I (II/b)</option><option>Pengatur (II/c)</option><option>Pengatur Tingkat I (II/d)</option><option>Penata Muda (III/a)</option><option>Penata Muda Tingkat I (III/b)</option><option>Penata (III/c)</option><option>Penata Tingkat I (III/d)</option><option>Pembina (IV/a)</option><option>Pembina Tingkat I (IV/b)</option><option>Pembina Utama Muda (IV/c)</option><option>Pembina Utama Madya (IV/d)</option><option>Pembina Utama (IV/e)</option>
-                    </select>
+                    <label class="fw-bold text-secondary">Jabatan / Pangkat</label>
+                    <input name="kadesPangkat" id="inKadesPangkat2" class="form-control form-control-lg" placeholder="Kepala Desa">
                 </div>
-                <button type="submit" id="btnSimpanKepsek" class="btn btn-secondary w-100 fw-bold py-3 shadow-sm rounded-pill">
-                    <span><i class="fas fa-save me-1"></i> SIMPAN DATA KEPSEK</span>
+                <button type="submit" id="btnSimpanKades" class="btn btn-secondary w-100 fw-bold py-3 shadow-sm rounded-pill">
+                    <span><i class="fas fa-save me-1"></i> SIMPAN DATA KADES</span>
                     <span class="spinner-border spinner-border-sm hide" role="status"></span>
                 </button>
             </form>
@@ -802,19 +806,20 @@
     <a class="nav-item-mobile active" onclick="nav('home', this)"><i class="fas fa-chart-pie"></i><span>Dashboard</span></a>
     <a class="nav-item-mobile" onclick="nav('masuk', this)"><i class="fas fa-inbox"></i><span>Srt Masuk</span></a>
     
-    <a class="nav-item-mobile btn-buat-surat non-kepsek hide" onclick="nav('buat', this)">
-        <div class="icon-wrapper"><i class="fas fa-magic"></i></div><span>Buat Surat</span></a>
-    <a class="nav-item-mobile btn-buat-surat kepsek-only hide" onclick="nav('ttd', this)">
-        <div class="icon-wrapper" style="background: linear-gradient(135deg, #198754, #20c997);"><i class="fas fa-qrcode"></i></div><span>TTE Surat</span></a>
+    <a class="nav-item-mobile btn-buat-surat non-kades hide" onclick="nav('buat', this)">
+    <div class="icon-wrapper"><i class="fas fa-magic"></i></div><span>Buat Surat</span></a>
+<a class="nav-item-mobile btn-buat-surat kades-only hide" onclick="nav('ttd', this)">
+    <div class="icon-wrapper" style="background: linear-gradient(135deg, #198754, #20c997);"><i class="fas fa-qrcode"></i></div><span>TTE Surat</span></a>
 
     <a class="nav-item-mobile" onclick="nav('keluar', this)"><i class="fas fa-paper-plane"></i><span>Srt Keluar</span></a>
     
     <a class="nav-item-mobile text-warning admin-only hide" onclick="nav('verifikasi', this)"><i class="fas fa-clipboard-check"></i><span>Verifikasi</span></a>
     <a class="nav-item-mobile text-info user-only hide" onclick="nav('hasil', this)"><i class="fas fa-file-export"></i><span>Hasil Surat</span></a>
     
-    <a class="nav-item-mobile text-secondary kepsek-only hide" onclick="nav('profil-kepsek', this)"><i class="fas fa-user-tie"></i><span>Data Kepsek</span></a>
+    <a class="nav-item-mobile text-secondary kades-only hide" onclick="nav('profil-kades', this)"><i class="fas fa-user-tie"></i><span>Data Kades</span></a>
 </div>
 </div>
+
 
   <div class="modal fade" id="modalSurat" tabindex="-1">
       <div class="modal-dialog modal-lg">
@@ -863,10 +868,10 @@
   <div class="modal fade" id="modalUser" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">User</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><form onsubmit="submitUser(event)"><input type="hidden" name="mode" id="uMode"><input type="hidden" name="oldUsername" id="uOld"><div class="mb-2"><label>Username</label><input name="username" id="uName" class="form-control" required></div><div class="mb-2"><label>Password</label><input name="password" id="uPass" class="form-control" required></div><div class="mb-2">
     <label>Role</label>
     <select name="role" id="uRole" class="form-select">
-        <option value="Admin">Admin</option>
-        <option value="User">User</option>
-        <option value="Kepsek">Kepsek</option>
-    </select>
+    <option value="Admin">Admin</option>
+    <option value="User">Staf / User</option>
+    <option value="Kades">Kepala Desa</option>
+</select>
 </div>
 <div class="mb-3"><label>Nama Lengkap</label><input name="nama" id="uFull" class="form-control" required></div>
 <div class="mb-3">
@@ -956,7 +961,7 @@
   <script>
   /* --- KONFIGURASI API (URL DARI GOOGLE APPS SCRIPT) --- */
   // NANTI GANTI LINK DI BAWAH INI DENGAN LINK HASIL DEPLOY APPS SCRIPT KAMU
-  const API_URL = "https://script.google.com/macros/s/AKfycbyyXeGZEDuGfBwdCZweYrD0fcfNiKKhmyiLRrtvG7WhEhoIKBrCfKjad-jPwZI67hVT/exec"; 
+  const API_URL = "https://script.google.com/macros/s/AKfycbwS4llalOmVa85yMnA9g5SbSqWHJbSqWRk4A1mIpBVnOJ3ESFRHNB-useGD6qBiR-r6/exec"; 
 
 
   /* --- FUNGSI JEMBATAN PENGHUBUNG (FETCH API) --- */
@@ -1025,11 +1030,11 @@
           $('#wrapPreview1').addClass('hide').removeClass('d-flex'); 
       }
       
-      if(s.logo_sekolah && s.logo_sekolah.length>50) { 
-          $('#logLogo2, #logoKanan').attr('src', s.logo_sekolah).show(); 
-          $('#imgPreview2').attr('src', s.logo_sekolah); 
+      if(s.logo_desa && s.logo_desa.length>50) { 
+          $('#logLogo2, #logoKanan').attr('src', s.logo_desa).show(); 
+          $('#imgPreview2').attr('src', s.logo_desa); 
           $('#wrapPreview2').removeClass('hide').addClass('d-flex'); 
-          $('#delSekolah').val('false');
+          $('#delDesa').val('false');
       } else { 
           $('#logLogo2, #logoKanan').hide(); 
           $('#wrapPreview2').addClass('hide').removeClass('d-flex'); 
@@ -1042,23 +1047,26 @@
       }
       $('#logInstansi').html(teksLoginInstansi); // Gunakan .html agar <br> terbaca sebagai Enter
       
-      $('#logSekolah').text(s.nama_sekolah||'LOADING...');
-      $('#txtInstansi').text(s.nama_instansi); $('#txtOpd').text(s.nama_opd); $('#txtSekolah').text(s.nama_sekolah); 
-      $('#txtAlamat').text(s.alamat_sekolah); $('#txtEmail').text(s.email_sekolah); $('#txtWeb').text(s.website_sekolah);
+      $('#logDesa').text(s.nama_desa||'LOADING...');
+      $('#txtInstansi').text(s.nama_instansi); $('#txtOpd').text(s.nama_opd); $('#txtDesa').text(s.nama_desa); 
+      $('#txtAlamat').text(s.alamat_desa); $('#txtEmail').text(s.email_desa); $('#txtWeb').text(s.website_desa);
       
-      $('#inInstansi').val(s.nama_instansi); $('#inOpd').val(s.nama_opd); $('#inSekolah').val(s.nama_sekolah); 
-      $('#inAlamat').val(s.alamat_sekolah); $('#inEmail').val(s.email_sekolah); $('#inWeb').val(s.website_sekolah); $('#inWarna').val(s.app_color);
-      $('#inKepsekNama').val(s.kepsek_nama); $('#inKepsekNip').val(s.kepsek_nip); 
-      $('#inKepsekPangkat').val(s.kepsek_pangkat); $('#inKotaSurat').val(s.kota_surat); $('#inKodeLembaga').val(s.kode_lembaga);
+      $('#inInstansi').val(s.nama_instansi); $('#inOpd').val(s.nama_opd); $('#inDesa').val(s.nama_desa); 
+      $('#inAlamat').val(s.alamat_desa); $('#inEmail').val(s.email_desa); $('#inWeb').val(s.website_desa); $('#inWarna').val(s.app_color);
+      $('#inKadesNama').val(s.kades_nama); $('#inKadesNip').val(s.kades_nip); 
+$('#inKadesPangkat').val(s.kades_pangkat); 
+$('#inSekdesNama').val(s.sekdes_nama); $('#inSekdesNip').val(s.sekdes_nip);
+$('#inKotaSurat').val(s.kota_surat); $('#inKodeLembaga').val(s.kode_lembaga);
       
-      if(!$('input[name="ttdNama"]').val()) $('input[name="ttdNama"]').val(s.kepsek_nama);
-      if(!$('input[name="ttdNip"]').val()) $('input[name="ttdNip"]').val(s.kepsek_nip);
-      if(!$('input[name="ttdPangkat"]').val()) $('input[name="ttdPangkat"]').val(s.kepsek_pangkat);
+      if(!$('input[name="ttdNama"]').val()) $('input[name="ttdNama"]').val(s.kades_nama);
+      if(!$('input[name="ttdNip"]').val()) $('input[name="ttdNip"]').val(s.kades_nip);
+      if(!$('input[name="ttdPangkat"]').val()) $('input[name="ttdPangkat"]').val(s.kades_pangkat);
 
-      $('#inKepsekNama2').val(s.kepsek_nama);
-      $('#inKepsekNip2').val(s.kepsek_nip);
-      $('#inKepsekPangkat2').val(s.kepsek_pangkat);
-      $('#inpKodeSekolah').val(s.kode_lembaga);
+
+$('#inKadesNama2').val(s.kades_nama);
+$('#inKadesNip2').val(s.kades_nip);
+$('#inKadesPangkat2').val(s.kades_pangkat);
+$('#inpKodeDesa').val(s.kode_lembaga);
   }
 
   function hapusLogo(jenis) {
@@ -1070,7 +1078,7 @@
       } else {
           $('#wrapPreview2').addClass('hide').removeClass('d-flex');
           $('#fLogo2').val('');
-          $('#delSekolah').val('true');
+          $('#delDesa').val('true');
           croppedBase64_2 = null;
       }
   }
@@ -1177,33 +1185,33 @@
       $('#view-dashboard').removeClass('hide');
       $('#lblRole').text(role); $('#lblNama').text(nama);
       
-      // --- LOGIKA BARU: TAMPILKAN DISCLAIMER KHUSUS ADMIN & KEPSEK ---
-      if (role === 'Admin' || role === 'Kepsek') {
+      // --- LOGIKA BARU: TAMPILKAN DISCLAIMER KHUSUS ADMIN & KADES ---
+      if (role === 'Admin' || role === 'Kades') {
           $('#disclaimer-tte').removeClass('hide');
       } else {
           $('#disclaimer-tte').addClass('hide');
       }
       // ---------------------------------------------------------------
 
-      // LOGIKA HAK AKSES MENU
-      if (role === 'Kepsek') { 
-          $('.admin-only').addClass('hide'); 
-          $('.non-kepsek').addClass('hide'); 
-          $('.user-only').addClass('hide');
-          $('.kepsek-only').removeClass('hide');
-      } 
-      else if (role === 'Admin') {
-          $('.kepsek-only').addClass('hide');
-          $('.user-only').addClass('hide');
-          $('.admin-only').removeClass('hide'); 
-          $('.non-kepsek').removeClass('hide'); 
-      } 
-      else { // Staf
-          $('.admin-only').addClass('hide'); 
-          $('.kepsek-only').addClass('hide'); 
-          $('.user-only').removeClass('hide');
-          $('.non-kepsek').removeClass('hide'); 
-      }
+      // GANTI BLOK INI DI DALAM FUNGSI checkSession()
+if (role === 'Kades') { 
+    $('.admin-only').addClass('hide'); 
+    $('.non-kades').addClass('hide'); 
+    $('.user-only').addClass('hide');
+    $('.kades-only').removeClass('hide');
+} 
+else if (role === 'Admin') {
+    $('.kades-only').addClass('hide');
+    $('.user-only').addClass('hide');
+    $('.admin-only').removeClass('hide'); 
+    $('.non-kades').removeClass('hide'); 
+} 
+else { // Staf
+    $('.admin-only').addClass('hide'); 
+    $('.kades-only').addClass('hide'); 
+    $('.user-only').removeClass('hide');
+    $('.non-kades').removeClass('hide'); 
+}
       
       if($('#view-dashboard').is(':visible') && $('.nav-link.active').length === 0) { nav('home'); }
     } else { 
@@ -1314,8 +1322,8 @@
           d.b64_instansi_qr = croppedBase64_1.qr; // Khusus QR
       }
       if (croppedBase64_2) {
-          d.b64_sekolah = croppedBase64_2.png;
-          d.b64_sekolah_qr = croppedBase64_2.qr; // Khusus QR
+          d.b64_desa = croppedBase64_2.png;
+          d.b64_desa_qr = croppedBase64_2.qr; // Khusus QR
       }
       
       apiCall('saveSettings', d).then(r => {
@@ -1371,8 +1379,8 @@
   
 
 
-  function loadAutoNumber() { apiCall('getAutoNumberData').then(r => { if (r.success) { if($('#inpNoUrut').val() === "") { $('#inpNoUrut').val(r.nextNo); } $('#inpKodeSekolah').val(r.kodeSekolah); updatePreview(); } }); }
-  function updatePreview() { const d=new Date(); const romawi = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII"][d.getMonth()]; const f=`${$('#selKodeArsip').val()||'...'}/${$('#inpNoUrut').val()||'...'}/${$('#inpKodeSekolah').val()||'...'}/${romawi}/${d.getFullYear()}`; $('#previewNomor').text(f); $('#nomorFull').val(f); }
+  function loadAutoNumber() { apiCall('getAutoNumberData').then(r => { if (r.success) { if($('#inpNoUrut').val() === "") { $('#inpNoUrut').val(r.nextNo); } $('#inpKodeDesa').val(r.kodeDesa); updatePreview(); } }); }
+  function updatePreview() { const d=new Date(); const romawi = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII"][d.getMonth()]; const f=`${$('#selKodeArsip').val()||'...'}/${$('#inpNoUrut').val()||'...'}/${$('#inpKodeDesa').val()||'...'}/${romawi}/${d.getFullYear()}`; $('#previewNomor').text(f); $('#nomorFull').val(f); }
   function updateTanggalSurat() { if($('#inpTglSurat').val()) { const tgl = new Date($('#inpTglSurat').val()).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'}); const kota = $('#inKotaSurat').val() || "Tempat"; $('#tanggalSuratFull').val(kota + ", " + tgl); } }
   function updateTanggalSaja() { const v=$('#inpTglSaja').val(); if(v){ const d=new Date(v); $('#valHariSaja').val(d.toLocaleDateString('id-ID',{weekday:'long'})); $('#valTglSaja').val(d.toLocaleDateString('id-ID',{year:'numeric',month:'long',day:'numeric'})); } }
   function updateHariAcara() { const v=$('#inpTglAcara').val(); if(v){ const d=new Date(v); $('#valHariAcara').val(d.toLocaleDateString('id-ID',{weekday:'long'})); $('#valTglAcaraIndo').val(d.toLocaleDateString('id-ID',{year:'numeric',month:'long',day:'numeric'})); } }
@@ -1462,10 +1470,10 @@ function panggilApiGenerate(dataObj) {
     if(p==='masuk') refreshTable('masuk'); 
     if(p==='keluar') refreshTable('keluar');
     if(p==='verifikasi') refreshDrafts(); 
-    if(p==='ttd') refreshKepsek();
+    if(p==='ttd') refreshKades();
     if(p==='hasil') refreshHasil();
     if(p==='users') loadUsers(); 
-    if(p==='profil-kepsek') loadInitData();
+    if(p==='profil-kades') loadInitData();
     if(p==='buat') { loadAutoNumber(); }
   }
     
@@ -1680,11 +1688,11 @@ function renderAksiDraft(id, pembuat, catatan) {
 function cekStatusAdmin(encCat) {
     const catatan = decodeURIComponent(encCat);
     if (catatan.trim() === "") {
-        Swal.fire('Status Dokumen', '<b>Draft Awal / Normal</b><br>Belum ada catatan revisi dari Kepala Sekolah.', 'info');
+        Swal.fire('Status Dokumen', '<b>Draft Awal / Normal</b><br>Belum ada catatan revisi dari Kepala Desa.', 'info');
     } else {
         Swal.fire({
-            title: 'Dikembalikan Oleh Kepsek', 
-            html: `<div class="text-start"><b>Catatan Revisi Kepsek:</b><br><div class="p-3 bg-danger bg-opacity-10 border border-danger rounded mt-2 text-danger"><i>"${catatan}"</i></div></div>`, 
+            title: 'Dikembalikan Oleh Kepala Desa', 
+            html: `<div class="text-start"><b>Catatan Revisi Kepala Desa:</b><br><div class="p-3 bg-danger bg-opacity-10 border border-danger rounded mt-2 text-danger"><i>"${catatan}"</i></div></div>`, 
             icon: 'warning'
         });
     }
@@ -1714,7 +1722,7 @@ function prosesDraft(id, aksi) {
     let teksKonfirmasi = "";
     if(aksi === 'Tolak') teksKonfirmasi = "Draft ini akan dihapus secara permanen. Lanjutkan?";
     if(aksi === 'CetakManual') teksKonfirmasi = "Surat akan dicetak menjadi Word/PDF tanpa TTE. Lanjutkan?";
-    if(aksi === 'TeruskanTTE') teksKonfirmasi = "Surat akan diteruskan ke Kepsek untuk di Tanda Tangani secara Digital. Lanjutkan?";
+    if(aksi === 'TeruskanTTE') teksKonfirmasi = "Surat akan diteruskan ke Kades untuk di Tanda Tangani secara Digital. Lanjutkan?";
     if(aksi === 'KirimKeAdmin') teksKonfirmasi = "Kirim draft ini ke Admin untuk dicek?";
 
     Swal.fire({ 
@@ -1747,9 +1755,9 @@ function prosesDraft(id, aksi) {
     });
 }
 
-function refreshKepsek() {
-    if($.fn.DataTable.isDataTable('#tKepsek')) { $('#tKepsek').DataTable().destroy(); }
-    $('#tKepsek').html('<tbody><tr><td colspan="5" class="text-center p-4"><div class="spinner-border text-success"></div></td></tr></tbody>');
+function refreshKades() {
+    if($.fn.DataTable.isDataTable('#tKades')) { $('#tKades').DataTable().destroy(); }
+    $('#tKades').html('<tbody><tr><td colspan="5" class="text-center p-4"><div class="spinner-border text-success"></div></td></tr></tbody>');
 
     const role = localStorage.getItem('sidimas_role');
     apiCall('getDrafts', { role: role, user: localStorage.getItem('sidimas_user') }).then(data => {
@@ -1761,17 +1769,16 @@ function refreshKepsek() {
             {title:"Aksi", render: (d,t,r) => `
                 <div class="d-flex gap-1">
                     <button class="btn btn-sm btn-info text-white" onclick="lihatPreview('${r.id}')" title="Pratinjau"><i class="fas fa-eye"></i></button>
-                    <button class="btn btn-sm btn-warning" onclick="kembalikanKepsek('${r.id}')" title="Kembalikan ke Admin"><i class="fas fa-reply"></i></button>
+                    <button class="btn btn-sm btn-warning" onclick="kembalikanKades('${r.id}')" title="Kembalikan ke Admin"><i class="fas fa-reply"></i></button>
                     <button class="btn btn-sm btn-success fw-bold" onclick="prosesTtd('${r.id}')" title="TTE"><i class="fas fa-pen-nib"></i></button>
                 </div>
             `}
         ];
-        
-        $('#tKepsek').DataTable({ data: data, columns: cols, scrollX: true, destroy: true, language: { url: "//cdn.datatables.net/plug-ins/1.13.4/i18n/id.json" }, order: [[1,'desc']] });
-    }); // <-- INI JUGA HILANG
+        $('#tKades').DataTable({ data: data, columns: cols, scrollX: true, destroy: true, language: { url: "//cdn.datatables.net/plug-ins/1.13.4/i18n/id.json" }, order: [[1,'desc']] });
+    }); 
 }
 
-function kembalikanKepsek(id) {
+function kembalikanKades(id) {
     Swal.fire({
         title: 'Kembalikan ke Admin',
         text: 'Berikan catatan revisi atau alasan penolakan:',
@@ -1781,14 +1788,12 @@ function kembalikanKepsek(id) {
         showCancelButton: true,
         confirmButtonText: 'Kirim Kembali',
         cancelButtonText: 'Batal',
-        inputValidator: (value) => {
-            if (!value) return 'Catatan wajib diisi!';
-        }
+        inputValidator: (value) => { if (!value) return 'Catatan wajib diisi!'; }
     }).then(res => {
         if(res.isConfirmed) {
             showLoadingTimer('Memproses...');
             apiCall('aksiDraft', { id: id, aksi: 'KembalikanAdmin', role: localStorage.getItem('sidimas_role'), catatan: res.value }).then(r => {
-                if(r.success) { Swal.fire('Berhasil', r.message, 'success'); refreshKepsek(); }
+                if(r.success) { Swal.fire('Berhasil', r.message, 'success'); refreshKades(); }
                 else { Swal.fire('Gagal', r.message, 'error'); }
             });
         }
@@ -1803,10 +1808,10 @@ function prosesTtd(id) {
     }).then(res => {
         if(res.isConfirmed) {
             showLoadingTimer2('Menyisipkan TTE & Membuat PDF...');
-            apiCall('ttdKepsek', { id: id }).then(r => {
+            apiCall('ttdKades', { id: id }).then(r => {
                 if(r.success) {
                     Swal.fire('Berhasil!', r.message, 'success');
-                    refreshKepsek();
+                    refreshKades();
                 } else {
                     Swal.fire('Gagal', r.message, 'error');
                 }
@@ -2094,25 +2099,25 @@ function scanDokumenAI() {
     reader.readAsDataURL(file);
 }
 
-function simpanSettingKepsek(e) {
+function simpanSettingKades(e) {
     e.preventDefault();
-    setBtnLoading('#btnSimpanKepsek', true, 'MENYIMPAN...');
+    setBtnLoading('#btnSimpanKades', true, 'MENYIMPAN...');
     
     // Kita panggil fungsi API saveSettings yang sama dengan Admin (sangat fleksibel)
     const fd = new FormData(e.target);
     const d = Object.fromEntries(fd);
     
-    // GANTI saveSettings MENJADI saveSettingKepsek
-        apiCall('saveSettingKepsek', d).then(r => {
-        setBtnLoading('#btnSimpanKepsek', false, 'SIMPAN DATA KEPSEK');
+    // GANTI saveSettings MENJADI saveSettingKades
+        apiCall('saveSettingKades', d).then(r => {
+        setBtnLoading('#btnSimpanKades', false, 'SIMPAN DATA KEPALA DESA');
         if(r && r.success === false) { 
             Swal.fire('Error', r.message, 'error'); 
         } else { 
-            Swal.fire('Sukses!', 'Data Kepsek Anda berhasil diperbarui.', 'success'); 
+            Swal.fire('Sukses!', 'Data Kepala Desa berhasil diperbarui.', 'success'); 
             loadInitData(); // Refresh UI dan header atas
         }
     }).catch(err => {
-        setBtnLoading('#btnSimpanKepsek', false, 'SIMPAN DATA KEPSEK');
+        setBtnLoading('#btnSimpanKades', false, 'SIMPAN DATA KEPALA DESA');
         Swal.fire('Error Server', 'Gagal menyimpan.', 'error');
     });
 }
@@ -2121,7 +2126,7 @@ function simpanSettingKepsek(e) {
   let cropper;
   let currentCropTarget = ''; 
   let croppedBase64_1 = null; // Menyimpan Base64 Instansi
-  let croppedBase64_2 = null; // Menyimpan Base64 Sekolah
+  let croppedBase64_2 = null; // Menyimpan Base64 Desa
 
   // Pancingan saat tombol file dipilih
   $('#fLogo1').on('change', function(e) { openCropper(e, 'logo1'); });
@@ -2178,7 +2183,7 @@ function simpanSettingKepsek(e) {
           croppedBase64_2 = { png: base64_png, qr: base64_jpeg }; // Simpan 2 versi
           $('#imgPreview2').attr('src', base64_png); // Preview tetap pakai yg transparan
           $('#wrapPreview2').removeClass('hide').addClass('d-flex');
-          $('#delSekolah').val('false');
+          $('#delDesa').val('false');
       }
       
       bootstrap.Modal.getInstance(document.getElementById('modalCrop')).hide();
