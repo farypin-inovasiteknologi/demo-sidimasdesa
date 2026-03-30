@@ -497,26 +497,36 @@
                      </div>
 
                      <div id="box-undangan" class="form-box hide">
-                        <div class="row mb-2">
-                            <div class="col-md-6"><label>Perihal</label><input name="perihal" class="form-control" placeholder="Undangan...../Pemanggilan orang tua.."></div>
-                            <div class="col-md-2"><label>Sifat</label><select name="sifatSurat" class="form-select"><option>Biasa</option><option>Penting</option></select></div>
-                            <div class="col-md-2"><label>Lampiran</label><input name="lampiranSurat" class="form-control" placeholder="-"></div>
-                        </div>
-                        <div class="row mb-2"><div class="col-md-10"><label>Kepada (Yth.)</label><input name="tujuanJabatan" class="form-control" placeholder="Kepala Desa..."></div></div>
-                        <div class="row mb-2">
-                        <div class="col-md-6"><label>Nama Tujuan</label><input name="tujuanNama" class="form-control" placeholder="Bpk. Ahmad..."></div>
-                        <div class="col-md-4"><label>Tempat</label><input name="tujuanTempat" class="form-control"></div></div>
-                        <div class="mb-2"><label>Isi Surat</label><textarea name="isiUmum" class="form-control" rows="4"></textarea></div>
-                        <div class="bg-light p-3 mb-2 rounded border">
-                            <label class="fw-bold text-muted small mb-2">DETAIL KEGIATAN/ACARA:</label>
-                            <div class="row g-2">
-                                <div class="col-md-6"><label>Nama Kegiatan</label><input name="acaraDetail" class="form-control"></div>
-                                <div class="col-md-6"><label>Tempat</label><input name="tempatAcara" class="form-control"></div>
-                                <div class="col-md-4"><label>Waktu</label><input name="waktuAcara" class="form-control"></div>
-                                <label>Tgl. Kegiatan</label><input type="date" id="inpTglAcara" class="form-control" onchange="updateHariAcara()"><input type="hidden" name="tglAcaraIndo" id="valTglAcaraIndo"><input type="hidden" name="hariAcara" id="valHariAcara"></div>
-                            </div>
-                        </div>
-                     </div>
+    <div class="row mb-2">
+        <div class="col-md-6"><label>Perihal</label><input name="perihal" class="form-control" placeholder="Undangan...../Pemanggilan orang tua.."></div>
+        <div class="col-md-2"><label>Sifat</label><select name="sifatSurat" class="form-select"><option>Biasa</option><option>Penting</option></select></div>
+        <div class="col-md-4"><label>Lampiran</label><input name="lampiranSurat" class="form-control" placeholder="-"></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-12"><label>Kepada (Yth.)</label><input name="tujuanJabatan" class="form-control" placeholder="Kepala Desa..."></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-6"><label>Nama Tujuan</label><input name="tujuanNama" class="form-control" placeholder="Bpk. Ahmad..."></div>
+        <div class="col-md-6"><label>Tempat</label><input name="tujuanTempat" class="form-control"></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-12"><label>Isi Surat</label><textarea name="isiUmum" class="form-control" rows="4"></textarea></div>
+    </div>
+    <div class="bg-light p-3 mb-2 rounded border">
+        <label class="fw-bold text-muted small mb-2">DETAIL KEGIATAN/ACARA:</label>
+        <div class="row g-2">
+            <div class="col-md-6"><label>Nama Kegiatan</label><input name="acaraDetail" class="form-control"></div>
+            <div class="col-md-6"><label>Tempat</label><input name="tempatAcara" class="form-control"></div>
+            <div class="col-md-6"><label>Waktu</label><input name="waktuAcara" class="form-control"></div>
+            <div class="col-md-6">
+                <label>Tgl. Kegiatan</label>
+                <input type="date" id="inpTglAcara" class="form-control" onchange="updateHariAcara()">
+                <input type="hidden" name="tglAcaraIndo" id="valTglAcaraIndo">
+                <input type="hidden" name="hariAcara" id="valHariAcara">
+            </div>
+        </div>
+    </div>
+</div>
 
                      <div id="box-suket" class="form-box hide">
                         <div class="card p-3 bg-light mb-2"><b class="text-primary">Menerangkan:</b><div class="row g-2 mt-1">
@@ -574,12 +584,19 @@
                     </div>
 
                      <div id="box-sk" class="form-box hide">
-                      <div class="col-md-12">
-                        <div class="mb-2"><label>TENTANG</label><input name="perihal" class="form-control" placeholder="PEMBAGIAN TUGAS GURU.............."></div>
-                        <div class="mb-2"><label>Menimbang</label><textarea name="skMenimbang" class="form-control" rows="3">a. Bahwa...  b. Bahwa...... dst</textarea></div>
-                        <div class="mb-2"><label>Mengingat</label><textarea name="skMengingat" class="form-control" rows="3">1. UU nomor... 2. Permendagri nomor...dst</textarea></div>
-                        <div class="mb-2"><label>Menetapkan</label><textarea name="skMenetapkan" class="form-control" rows="5">Kesatu:..... Kedua:............ Ketiga:...........</textarea></div>
-                     </div></div>
+    <div class="row mb-2">
+        <div class="col-md-12"><label>TENTANG</label><input name="perihal" class="form-control" placeholder="PENETAPAN KETUA PEMUDA DESA.............."></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-12"><label>Menimbang</label><textarea name="skMenimbang" class="form-control" rows="3">a. Bahwa...  b. Bahwa...... dst</textarea></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-12"><label>Mengingat</label><textarea name="skMengingat" class="form-control" rows="3">1. UU nomor... 2. Permendagri nomor...dst</textarea></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-12"><label>Menetapkan</label><textarea name="skMenetapkan" class="form-control" rows="5">Kesatu:..... Kedua:............ Ketiga:...........</textarea></div>
+    </div>
+</div>
 
                     <div id="box-pindah" class="form-box hide">
                         <div class="card p-3 bg-light mb-2"><b class="text-primary">Data Identitas (Kepala Keluarga / Pemohon):</b>
@@ -673,43 +690,60 @@
                     </div>
 
                     <h6 class="text-secondary border-bottom pb-2 mt-4">3. Penandatangan</h6>
-                    <div class="row mb-3">
-                        <div class="col-md-12">
-                            <div class="alert alert-info border-info py-2 shadow-sm">
-                                <label class="fw-bold mb-1 text-primary"><i class="fas fa-pen-nib me-2"></i>Ditandatangani Oleh:</label>
-                                <select name="penandatanganPilihan" id="inPilihTtd" class="form-select fw-bold mb-3" onchange="ubahPenandatangan()">
-                                    <option value="Kades">Kepala Desa</option>
-                                    <option value="Sekdes">a.n. Kepala Desa (Sekretaris Desa)</option>
-                                </select>
-                                
-                                <label class="fw-bold mb-1 text-primary"><i class="fas fa-print me-2"></i>Pilih Jalur Cetak:</label>
-                                <select name="jenisTtd" id="inJenisTtd" class="form-select form-select-lg fw-bold">
-                                    <option value="TTE">Tanda Tangan Elektronik (TTE) - Masuk antrean</option>
-                                    <option value="Manual">Manual (Cetak & TTD Basah) - Tanpa TTE</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="col-md-4"><label>Nama Pejabat</label><input name="ttdNama" id="inTtdNama" class="form-control" readonly></div>
-                        
-                        <div class="col-md-4">
-                            <label>Jabatan Tertulis</label>
-                            <textarea name="ttdJabatan" id="inTtdJabatan" class="form-control" rows="2" readonly style="resize: none;"></textarea>
-                        </div>
-                        
-                        <div class="col-md-4"><label>NIP (Bila ada)</label><input name="ttdNip" id="inTtdNip" class="form-control" readonly></div>
-                        <div class="col-md-6"><label>Tanggal TTD</label><input type="date" class="form-control" id="inpTglSaja" onchange="updateTanggalSaja()" required><input type="hidden" name="tanggalSaja" id="valTglSaja"></div>
-                    </div>
+<div class="row mb-3">
+    <div class="col-md-12">
+        <div class="alert alert-info border-info py-2 shadow-sm">
+            <label class="fw-bold mb-1 text-primary"><i class="fas fa-pen-nib me-2"></i>Ditandatangani Oleh:</label>
+            <select name="penandatanganPilihan" id="inPilihTtd" class="form-select fw-bold mb-3" onchange="ubahPenandatangan()">
+                <option value="Kades">Kepala Desa</option>
+                <option value="Sekdes">a.n. Kepala Desa (Sekretaris Desa)</option>
+            </select>
+            
+            <label class="fw-bold mb-1 text-primary"><i class="fas fa-print me-2"></i>Pilih Jalur Cetak:</label>
+            <select name="jenisTtd" id="inJenisTtd" class="form-select form-select-lg fw-bold">
+                <option value="TTE">Tanda Tangan Elektronik (TTE) - Masuk antrean</option>
+                <option value="Manual">Manual (Cetak & TTD Basah) - Tanpa TTE</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-md-4">
+        <label>Nama Pejabat</label>
+        <input name="ttdNama" id="inTtdNama" class="form-control" readonly>
+    </div>
+    <div class="col-md-4">
+        <label>Jabatan Tertulis</label>
+        <textarea name="ttdJabatan" id="inTtdJabatan" class="form-control" rows="2" readonly style="resize: none;"></textarea>
+    </div>
+    <div class="col-md-4">
+        <label>NIP (Bila ada)</label>
+        <input name="ttdNip" id="inTtdNip" class="form-control" readonly>
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col-md-12">
+        <label>Tanggal TTD</label>
+        <input type="date" class="form-control" id="inpTglSaja" onchange="updateTanggalSaja()" required>
+        <input type="hidden" name="tanggalSaja" id="valTglSaja">
+    </div>
+</div>
 
-                     <div class="mb-4 hide" id="box-tembusan">
-                      <label>Tembusan</label>
-                      <textarea name="tembusan" class="form-control" rows="3" placeholder="Tembusan :&#10;1. .................&#10;2. ................."></textarea>
-                        <div class="form-text text-info small"><i class="fas fa-info-circle"></i> Kosongkan jika tidak memerlukan tembusan.</div>
-                      </div>
+<div class="row mb-4 hide" id="box-tembusan">
+    <div class="col-md-12">
+        <label>Tembusan</label>
+        <textarea name="tembusan" class="form-control" rows="3" placeholder="Tembusan :&#10;1. .................&#10;2. ................."></textarea>
+        <div class="form-text text-info small"><i class="fas fa-info-circle"></i> Kosongkan jika tidak memerlukan tembusan.</div>
+    </div>
+</div>
 
-                     <button type="submit" id="btnGen" class="btn btn-success w-100 py-3 fw-bold shadow-sm"><span>GENERATE DOKUMEN</span><span class="spinner-border spinner-border-sm hide" role="status"></span></button>
-                 </form>
+<div class="row mt-2">
+    <div class="col-md-12">
+        <button type="submit" id="btnGen" class="btn btn-success w-100 py-3 fw-bold shadow-sm">
+            <span>GENERATE DOKUMEN</span><span class="spinner-border spinner-border-sm hide" role="status"></span>
+        </button>
+    </div>
+</div>
                  <div id="hasilGenerate" class="mt-4 hide text-center p-4 bg-light border border-success rounded">
                     <h4 class="text-success fw-bold mb-3">Dokumen Berhasil Dibuat!</h4>
                     <div class="d-flex justify-content-center gap-3"><a id="linkPdf" target="_blank" class="btn btn-danger btn-lg">Unduh PDF</a><a id="linkWord" target="_blank" class="btn btn-primary btn-lg">Review/Edit Word</a></div>
@@ -2658,36 +2692,38 @@
     }
 
     // Update fungsi GantiFormSurat untuk mendeteksi template secara presisi
-    function gantiFormSurat() { 
-      const t = $('#pilihJenisSurat option:selected').text().toLowerCase() || ""; 
-      $('.form-box').addClass('hide').find('input,textarea,select').prop('disabled', true); 
-      let aid = '#box-umum'; 
-      
-      // LOGIKA DETEKSI TEMPLATE DESA
-      if (t.includes('sku') || t.includes('sktm') || t.includes('keterangan warga')) { aid = '#box-warga'; } 
-      else if (t.includes('pengantar kependudukan')) { aid = '#box-warga'; $('textarea[name="suketIsi"]').attr('name', 'keperluanPengantar'); } 
-      else if (t.includes('pindah') || t.includes('datang')) { aid = '#box-pindah'; }
-      else if (t.includes('kelahiran')) { aid = '#box-kelahiran'; }
-      else if (t.includes('kematian')) { aid = '#box-kematian'; }
-      else if (t.includes('beda nama')) { aid = '#box-bedanama'; }
-      else if (t.includes('undangan')) { aid = '#box-undangan'; } 
-      else if (t.includes('keputusan') || t.includes('sk')) { aid = '#box-sk'; } 
-      else if (t.includes('sppd') || t.includes('perjalanan')) { aid = '#box-sppd'; }
-      else if (t.includes('tugas') || t.includes('st')) { aid = '#box-spt'; }
+function gantiFormSurat() { 
+  const t = $('#pilihJenisSurat option:selected').text().toLowerCase() || ""; 
+  $('.form-box').addClass('hide').find('input,textarea,select').prop('disabled', true); 
+  let aid = '#box-umum'; 
+  
+  // LOGIKA DETEKSI TEMPLATE DESA
+  if (t.includes('sku') || t.includes('sktm') || t.includes('keterangan warga')) { aid = '#box-warga'; } 
+  else if (t.includes('pengantar kependudukan')) { aid = '#box-warga'; $('textarea[name="suketIsi"]').attr('name', 'keperluanPengantar'); } 
+  else if (t.includes('pindah') || t.includes('datang')) { aid = '#box-pindah'; }
+  else if (t.includes('kelahiran')) { aid = '#box-kelahiran'; }
+  else if (t.includes('kematian')) { aid = '#box-kematian'; }
+  else if (t.includes('beda nama')) { aid = '#box-bedanama'; }
+  else if (t.includes('undangan')) { aid = '#box-undangan'; } 
+  else if (t.includes('keputusan') || t.includes('sk')) { aid = '#box-sk'; } 
+  else if (t.includes('sppd') || t.includes('perjalanan')) { aid = '#box-sppd'; }
+  else if (t.includes('tugas') || t.includes('st')) { aid = '#box-spt'; }
+  else if (t.includes('pengantar')) { aid = '#box-pengantar'; } // <--- FIX BUG 1: Tambahkan baris ini
 
-      $(aid).removeClass('hide').find('input,textarea,select').prop('disabled', false); 
-      
-      // Sembunyikan/munculkan tembusan
-      const showTembusan = ['umum', 'undangan', 'keputusan', 'tugas'].some(k => t.includes(k));
-      if(showTembusan) {
-        $('#box-tembusan').removeClass('hide').find('textarea').prop('disabled', false);
-      } else {
-        $('#box-tembusan').addClass('hide').find('textarea').prop('disabled', true);
-      }
+  $(aid).removeClass('hide').find('input,textarea,select').prop('disabled', false); 
+  
+  // Sembunyikan/munculkan tembusan
+  const showTembusan = ['umum', 'undangan', 'keputusan', 'tugas', 'pengantar'].some(k => t.includes(k)); // Tambahkan 'pengantar' di sini
+  if(showTembusan) {
+    $('#box-tembusan').removeClass('hide').find('textarea').prop('disabled', false);
+  } else {
+    $('#box-tembusan').addClass('hide').find('textarea').prop('disabled', true);
+  }
 
-      loadAutoNumber();
-      ubahPenandatangan(); 
-    }
+  loadAutoNumber();
+  ubahPenandatangan(); 
+}
+
   </script>
 
 </body>
