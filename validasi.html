@@ -16,7 +16,7 @@
         .logos img { height: 75px; object-fit: contain; }
         .kop-text { text-align: center; margin-bottom: 25px; }
         .nama-instansi { font-size: 1.1rem; font-weight: bold; color: #495057; text-transform: uppercase; }
-        .nama-sekolah { font-size: 1.4rem; font-weight: 900; color: #0d6efd; text-transform: uppercase; margin-top: 5px; }
+        .nama-desa { font-size: 1.4rem; font-weight: 900; color: #0d6efd; text-transform: uppercase; margin-top: 5px; }
         
         .pengumuman { background-color: #e8f5e9; padding: 15px; text-align: center; border-radius: 10px; margin-bottom: 25px; border: 1px solid #c3e6cb; }
         .badge-tte { display: inline-block; background-color: #198754; color: white; padding: 6px 15px; border-radius: 30px; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 10px; }
@@ -58,12 +58,12 @@
             
             <div class="kop-text">
                 <div class="nama-instansi" id="v-instansi">Loading...</div>
-                <div class="nama-sekolah" id="v-sekolah">Loading...</div>
+                <div class="nama-desa" id="v-desa">Loading...</div>
             </div>
 
             <div class="pengumuman">
                 <div class="badge-tte"><i class="fas fa-check-circle me-1"></i> DOKUMEN VALID</div>
-                <p class="teks-pengumuman">NASKAH SURAT INI DIKELOLA DENGAN APLIKASI SISTEM DIGITAL MANAJEMEN ARSIP SURAT</p>
+                <p class="teks-pengumuman">NASKAH SURAT INI DIKELOLA DENGAN APLIKASI SIDIMAS DESA (SISTEM DIGITAL MANAJEMEN ARSIP SURAT)</p>
             </div>
 
 <div class="data-ttd">
@@ -72,7 +72,7 @@
      <div class="data-row"><span class="d-label">NIP</span><span class="d-value" id="v-nip"></span></div>
      <div class="data-row"><span class="d-label">Jabatan</span><span class="d-value" id="v-jabatan">Kepala Desa</span></div>
 
-    <div class="data-row"><span class="d-label">Instansi</span><span class="d-value text-primary" id="v-sekolah-ttd"></span></div>
+    <div class="data-row"><span class="d-label">Instansi</span><span class="d-value text-primary" id="v-desa-ttd"></span></div>
     <div class="data-row mt-3"><span class="d-label">Nomor Surat</span><span class="d-value val-nomor" id="v-nomor"></span></div>
     <div class="data-row"><span class="d-label">Ditandatangani Pada</span><span class="d-value text-success"><i class="far fa-clock me-1"></i><span id="v-waktu"></span></span></div>
     
@@ -94,7 +94,7 @@
 
     <script>
         // MASUKKAN LINK APPS SCRIPT ANDA DI SINI
-        const API_URL = "https://script.google.com/macros/s/AKfycbyyXeGZEDuGfBwdCZweYrD0fcfNiKKhmyiLRrtvG7WhEhoIKBrCfKjad-jPwZI67hVT/exec";
+        const API_URL = "https://script.google.com/macros/s/AKfycbwS4llalOmVa85yMnA9g5SbSqWHJbSqWRk4A1mIpBVnOJ3ESFRHNB-useGD6qBiR-r6/exec";
 
         document.addEventListener('DOMContentLoaded', () => {
             // Ambil Parameter ID dari URL (?id=...)
@@ -130,14 +130,14 @@
             document.getElementById('result-screen').classList.remove('hide');
 
             if(data.logoInstansi) { document.getElementById('v-logo1').src = data.logoInstansi; document.getElementById('v-logo1').classList.remove('hide'); }
-            if(data.logoSekolah) { document.getElementById('v-logo2').src = data.logoSekolah; document.getElementById('v-logo2').classList.remove('hide'); }
+            if(data.logoDesa) { document.getElementById('v-logo2').src = data.logoDesa; document.getElementById('v-logo2').classList.remove('hide'); }
             
             document.getElementById('v-instansi').innerText = data.namaInstansi;
-            document.getElementById('v-sekolah').innerText = data.namaSekolah;
+            document.getElementById('v-desa').innerText = data.namaDesa;
             
-            document.getElementById('v-nama').innerText = data.namaKepsek;
-            document.getElementById('v-nip').innerText = data.nipKepsek;
-            document.getElementById('v-sekolah-ttd').innerText = data.namaSekolah;
+            document.getElementById('v-nama').innerText = data.namaKades;
+            document.getElementById('v-nip').innerText = data.nipKades;
+            document.getElementById('v-desa-ttd').innerText = data.namaDesa;
             document.getElementById('v-ins2').innerText = data.namaInstansi;
             document.getElementById('v-jabatan').innerText = data.jabatanKades || 'Kepala Desa';
             
